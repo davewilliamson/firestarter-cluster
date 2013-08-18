@@ -1,0 +1,37 @@
+{
+  "name": "firestarter-cluster",
+  "description": "Module to safely and easily start and stop your express app within a cluster",
+  "version": "0.0.1",
+  "author": "davewilliamson",
+  "homepage": "http://davewilliamson.github.io/firestarter-cluster",
+  "keywords": [
+    "cluster",
+    "express",
+    "startup",
+    "shutdown",
+    "error handling",
+    "errors"
+  ],
+  "bugs": "https://github.com/davewilliamson/firestarter-cluster/issues",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/davewilliamson/firestarter-cluster.git"
+  },
+  "engine": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "buster-test"
+  },
+  "main": "index",
+  "devDependencies": {
+    "express": ">=3.0.0",
+    "buster": "~0.6.12",
+    "jshint": "~2.1.10"
+  },
+  "dependencies": {
+    "firestarter" : "latest"
+  }
+}
