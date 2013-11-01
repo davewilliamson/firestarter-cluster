@@ -32,6 +32,7 @@
     "jshint": "~2.1.10"
   },
   "dependencies": {
-    "firestarter" : "latest"
+    "firestarter": "latest",
+    "commander": "~2.0.0"
   }
 }

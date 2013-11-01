@@ -1,0 +1,42 @@
+
+  Commands:
+
+    start     - Starts the application
+                (optional, this is the default if the app IS NOT running) 
+
+    stop      - Stops a running application
+                (Safely stopping the application workers)
+
+    restart   - Restarts a running application
+                (Safely stopping the application workers)
+
+    terminate - Terminates a running application
+                (KILLS the processes ASAP)
+
+    status    - Reports on the status of the running application
+                (optional, this is the default if the app IS running)
+
+
+
+Running 'firestarter' with no options will report on the current status of the service, or (if there is a 'appMain' entry in the config file, and the app is not currenly running), it starts the app.
+
+You can use the Options on the command line, but it is often better to use a firestarter.config file in your projects home directory.  The format of this file is a JSON file, with each of the long option names, as a field name, e.g.:
+
+    {             
+        "workers": 8,
+        "ipc": "/var/run/myapp.ipc",
+        "log_dir": "/var/log/myapp",
+        "github_auto_deploy": true
+    }
+
+Alternately, you can put a section in your package.json file that uses the same structure, e.g.:
+
+    "firestarter": {             
+        "workers": 8,
+        "ipc": "/var/run/myapp.ipc",
+        "log_dir": "/var/log/myapp",
+        "github_auto_deploy": true
+    }
+
+If command line options are specified, and there is a conflicting entry in the config file, the command line options will be accepted as the users desired intention.
+
