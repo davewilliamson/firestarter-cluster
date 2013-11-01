@@ -59,17 +59,19 @@ module.exports = function(userConfig){
 		});
 	};
 
-	process.on('SIGINT', function() {
-		console.log('');
-		console.log('FireStarter Cluster - Received shutdown message from SIGINT (ctrl+c)');
-		process.exit(0);
-	});
+	
 
 	var fn = {
 
 		startup : function(init, onShutdown, onReady){
 
 			if(cluster.isMaster) {
+
+				process.on('SIGINT', function() {
+					console.log('');
+					console.log('FireStarter Cluster - Received shutdown message from SIGINT (ctrl+c)');
+					process.exit(0);
+				});
 
 				for( var instance = 0; instance < numCPUs; instance++){
 					newWorker();
